@@ -258,16 +258,12 @@ export default function GameControlPage({
   }
 
   async function revealQuestion() {
-    await runRpc("host_reveal_question", {
-      p_game_id: id,
-    });
-  }
-async function revealQuestion() {
   await runRpc("host_reveal_question", {
     p_game_id: id,
   });
 }
-  async function revealAnswer(position: number) {
+
+async function revealAnswer(position: number) {
     const success = await runRpc("host_reveal_answer", {
       p_game_id: id,
       p_answer_position: position,
